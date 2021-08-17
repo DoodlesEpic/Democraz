@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "Democraz"
+name = "democraz_brasil"
 version = "0.1.0"
 description = ""
 authors = ["DoodlesEpic <eduardomoraes84@yahoo.com.br>"]

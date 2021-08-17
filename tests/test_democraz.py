@@ -1,4 +1,4 @@
-from democraz import __version__
+from democraz_brasil import __version__
 
 
 def test_version():
