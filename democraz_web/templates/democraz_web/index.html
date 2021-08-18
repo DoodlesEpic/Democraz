@@ -5,18 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Democraz</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/yegor256/tacit@gh-pages/tacit-css-1.5.5.min.css"
+    />
   </head>
+
   <body>
-    <h1>Democraz</h1>
-    <p>Seja bem-vindo ao Democraz</p>
-    {% for dado in pecs.dados %}
+    <header>
+      <section>
+        <h1>Democraz</h1>
+        <p>Seja bem-vindo ao Democraz</p>
+      </section>
+    </header>
 
-    <a href="{{dado.uri}}">
-      <p>
-        Tipo: {{dado.siglaTipo}}| Ano: {{ano}} | Proposição: {{dado.ementa}}
-      </p>
-    </a>
+    <main>
+      <section>
+        <dl>
+          {% for dado in pecs.dados %}
+          <article>
+            <a href="{{dado.uri}}">
+              <dt>Tipo: {{dado.siglaTipo}} | Ano: {{dado.ano}}</dt>
+              <dd>Proposição: {{dado.ementa}}</dd>
+            </a>
+          </article>
+          {% endfor%}
+        </dl>
+      </section>
+    </main>
 
-    {% endfor%}
+    <footer>
+      <section>
+        <p>Democraz</p>
+        <p>Criado por Eduardo Moraes e Pedro Estefan, 2021</p>
+      </section>
+    </footer>
   </body>
 </html>
