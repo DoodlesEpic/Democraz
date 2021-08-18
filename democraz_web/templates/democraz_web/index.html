@@ -25,7 +25,7 @@
           {% for dado in pecs.dados %}
           <article>
             <a href="{{dado.uri}}">
-              <dt>Tipo: {{dado.siglaTipo}} | Ano: {{dado.ano}}</dt>
+              <dt>{{dado.siglaTipo}} {{dado.numero}} | Ano: {{dado.ano}}</dt>
               <dd>Proposição: {{dado.ementa}}</dd>
             </a>
           </article>
