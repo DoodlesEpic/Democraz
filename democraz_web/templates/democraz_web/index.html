@@ -9,5 +9,14 @@
   <body>
     <h1>Democraz</h1>
     <p>Seja bem-vindo ao Democraz</p>
+    {% for dado in pecs.dados %}
+
+    <a href="{{dado.uri}}">
+      <p>
+        Tipo: {{dado.siglaTipo}}| Ano: {{ano}} | Proposição: {{dado.ementa}}
+      </p>
+    </a>
+
+    {% endfor%}
   </body>
 </html>
