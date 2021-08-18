@@ -1,5 +1,5 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def inicio(request):
-    return HttpResponse("Olá, seja bem-vindo ao Democraz.")
+    return render(request, 'index.html')
