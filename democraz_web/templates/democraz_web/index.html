@@ -27,6 +27,12 @@
             <a href="{{dado.uri}}">
               <dt>{{dado.siglaTipo}} {{dado.numero}} | Ano: {{dado.ano}}</dt>
               <dd>Proposição: {{dado.ementa}}</dd>
+              <dd>
+                <i
+                  >Status:
+                  {{dado.proposicao.dados.statusProposicao.descricaoSituacao}}</i
+                >
+              </dd>
             </a>
           </article>
           {% endfor%}
