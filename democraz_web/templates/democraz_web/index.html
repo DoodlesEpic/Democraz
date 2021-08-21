@@ -43,6 +43,21 @@
         <h1>Democraz</h1>
         <p>Seja bem-vindo ao Democraz</p>
       </section>
+
+      <nav>
+        <h2>Página {{ pagina }}</h2>
+
+        {% if pagina > 1 %}
+        <span>
+          <a href="/">Começo</a>
+          <span>&VerticalSeparator; </span>
+          <a href="{{ pagina|add:-1 }}">Voltar página</a>
+          <span>&VerticalSeparator; </span>
+        </span>
+        {% endif %}
+
+        <a href="{{ pagina|add:1 }}">Próxima página</a>
+      </nav>
     </header>
 
     <main>
@@ -64,6 +79,21 @@
           {% endfor%}
         </dl>
       </section>
+
+      <nav>
+        <h2>Página {{ pagina }}</h2>
+
+        {% if pagina > 1 %}
+        <span>
+          <a href="/">Começo</a>
+          <span>&VerticalSeparator; </span>
+          <a href="{{ pagina|add:-1 }}">Voltar página</a>
+          <span>&VerticalSeparator; </span>
+        </span>
+        {% endif %}
+
+        <a href="{{ pagina|add:1 }}">Próxima página</a>
+      </nav>
     </main>
 
     <footer>
