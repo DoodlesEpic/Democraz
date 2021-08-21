@@ -14,3 +14,6 @@ Posteriormente para executar o servidor de testes localmente execute:
 poetry run python manage.py runserver
 ```
 O servidor deve iniciar e o link de acesso deve aparecer na janela do terminal.
+
+## Licença
+Todo o programa está englobado na licença GNU General Public License v3, cheque o arquivo LICENSE para detalhes de o que pode ou não fazer com o código.
