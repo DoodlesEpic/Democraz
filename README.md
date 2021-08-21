@@ -3,8 +3,12 @@
 Devido a frustação com o website do governo brasileiro para a Câmara dos Deputados desenvolvemos esse pequeno website em Python Django para exibir projetos de lei, consumindo diretamente a API de Dados Abertos da Câmara dos Deputados.
 
 ## Demonstração
+<<<<<<< HEAD
 
 ![Print da tela mostrando a lista de PECs no website](https://user-images.githubusercontent.com/37254797/130305294-de214b0a-c884-45dc-9a36-faa0b459e205.png)
+=======
+![Print da tela mostrando a lista de PECs no website](https://user-images.githubusercontent.com/37254797/130308506-fc1c6443-5815-4fc5-bd82-8d72940d4018.png)
+>>>>>>> ec64c40 (Atualizar print do README)
 
 ## Configurando o ambiente
 
