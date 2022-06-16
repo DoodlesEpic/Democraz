@@ -41,7 +41,12 @@
     <header>
       <section>
         <h1>Democraz</h1>
-        <p>Seja bem-vindo ao Democraz</p>
+        <p>
+          Seja bem-vindo ao Democraz. Devido a frustação com o website do
+          governo brasileiro para a Câmara dos Deputados desenvolvemos esse
+          pequeno website para exibir projetos de lei, consumindo diretamente
+          dos Dados Abertos da Câmara dos Deputados.
+        </p>
       </section>
 
       <nav>
@@ -49,14 +54,20 @@
 
         {% if pagina > 1 %}
         <span>
-          <a href="/">Começo</a>
+          <form method="get" action="/">
+            <button type="submit">Começo</button>
+          </form>
           <span>&VerticalSeparator; </span>
-          <a href="{{ pagina|add:-1 }}">Voltar página</a>
+          <form method="get" action="{{ pagina|add:-1 }}">
+            <button type="submit">Voltar página</button>
+          </form>
           <span>&VerticalSeparator; </span>
         </span>
         {% endif %}
 
-        <a href="{{ pagina|add:1 }}">Próxima página</a>
+        <form method="get" action="{{ pagina|add:1 }}">
+          <button type="submit">Próxima página</button>
+        </form>
       </nav>
     </header>
 
