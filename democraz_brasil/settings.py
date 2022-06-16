@@ -150,3 +150,8 @@ CACHES = {
         'LOCATION': 'democraz-cache',
     }
 }
+
+# Security
+SECURE_SSL_REDIRECT = True
+SESSIONS_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
