@@ -1,0 +1,1 @@
+web: gunicorn democraz_brasil.wsgi
