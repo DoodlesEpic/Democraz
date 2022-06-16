@@ -54,18 +54,20 @@
 
         {% if pagina > 1 %}
         <span>
-          <form method="get" action="/">
+          <form style="display: inline" method="get" action="/">
             <button type="submit">Começo</button>
           </form>
-          <span>&VerticalSeparator; </span>
-          <form method="get" action="{{ pagina|add:-1 }}">
+          <form
+            style="display: inline"
+            method="get"
+            action="{{ pagina|add:-1 }}"
+          >
             <button type="submit">Voltar página</button>
           </form>
-          <span>&VerticalSeparator; </span>
         </span>
         {% endif %}
 
-        <form method="get" action="{{ pagina|add:1 }}">
+        <form style="display: inline" method="get" action="{{ pagina|add:1 }}">
           <button type="submit">Próxima página</button>
         </form>
       </nav>
@@ -96,14 +98,22 @@
 
         {% if pagina > 1 %}
         <span>
-          <a href="/">Começo</a>
-          <span>&VerticalSeparator; </span>
-          <a href="{{ pagina|add:-1 }}">Voltar página</a>
-          <span>&VerticalSeparator; </span>
+          <form style="display: inline" method="get" action="/">
+            <button type="submit">Começo</button>
+          </form>
+          <form
+            style="display: inline"
+            method="get"
+            action="{{ pagina|add:-1 }}"
+          >
+            <button type="submit">Voltar página</button>
+          </form>
         </span>
         {% endif %}
 
-        <a href="{{ pagina|add:1 }}">Próxima página</a>
+        <form style="display: inline" method="get" action="{{ pagina|add:1 }}">
+          <button type="submit">Próxima página</button>
+        </form>
       </nav>
     </main>
 
