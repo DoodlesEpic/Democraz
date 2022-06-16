@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get("DEMOCRAZ_DJANGO_SECRET", "rEWKYEXweRppHmUfGw59dWH36
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ "democraz.herokuapp.com" ]
 
 
 # Application definition
