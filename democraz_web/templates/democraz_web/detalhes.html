@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="{{ detalhes.dados.keywords }}" />
+    <title>Democraz</title>
+
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="{% static 'favicon.ico' %}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{% static 'apple-touch-icon.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{% static 'favicon-32x32.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{% static 'favicon-16x16.png' %}"
+    />
+    <link rel="manifest" href="{% static 'site.webmanifest' %}" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/yegor256/tacit@gh-pages/tacit-css-1.5.5.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <section>
+        <h1>Democraz</h1>
+        <p>
+          Seja bem-vindo ao Democraz. Devido a frustação com o website do
+          governo brasileiro para a Câmara dos Deputados desenvolvemos esse
+          pequeno website para exibir projetos de lei, consumindo diretamente
+          dos Dados Abertos da Câmara dos Deputados.
+        </p>
+      </section>
+    </header>
+
+    <main>
+      <hr />
+      <section>
+        <p>
+          {{ detalhes.dados.descricaoTipo }} ({{ detalhes.dados.siglaTipo }})
+          número {{ detalhes.dados.numero }}
+        </p>
+        <p>{{ detalhes.dados.statusProposicao.regime }}</p>
+
+        <p>{{ detalhes.dados.ementa }}</p>
+        <p>
+          Apresentado {{ detalhes.dados.dataApresentacao }} pelo órgão de sigla
+          {{ detalhes.dados.statusProposicao.siglaOrgao }}
+        </p>
+        <p>Atualizado {{ detalhes.dados.statusProposicao.dataHora }}</p>
+        <p>
+          Tramitação: {{ detalhes.dados.statusProposicao.descricaoTramitacao }}
+        </p>
+        <p>Situação: {{ detalhes.dados.statusProposicao.descricaoSituacao }}</p>
+        <p>Despacho: {{ detalhes.dados.statusProposicao.despacho }}</p>
+        <p>Ambito: {{ detalhes.dados.statusProposicao.ambito }}</p>
+        <p>Apreciacao: {{ detalhes.dados.statusProposicao.apreciacao }}</p>
+      </section>
+    </main>
+
+    <footer>
+      <hr />
+      <section>
+        <h2>Democraz</h2>
+        <p>Criado por Eduardo Moraes e Pedro Estefan, 2021</p>
+      </section>
+    </footer>
+  </body>
+</html>

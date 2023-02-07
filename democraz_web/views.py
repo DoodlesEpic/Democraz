@@ -15,3 +15,15 @@ async def inicio(request, pagina=1):
     context = {'pecs': pecs, 'pagina': pagina}
 
     return render(request, 'index.html', context)
+
+async def detalhes(request, pec):
+
+    url = f'https://dadosabertos.camara.leg.br/api/v2/proposicoes/{pec}'
+
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url) as response:
+            detalhes = await response.json()
+
+    context = {'pec': pec, 'detalhes': detalhes}
+
+    return render(request, 'detalhes.html', context)
