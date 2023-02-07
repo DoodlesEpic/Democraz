@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="{{ detalhes.dados.keywords }}" />
     <title>Democraz</title>
 
     <link
@@ -51,7 +52,28 @@
     </header>
 
     <main>
-      <section>{{ detalhes }}</section>
+      <hr />
+      <section>
+        <p>
+          {{ detalhes.dados.descricaoTipo }} ({{ detalhes.dados.siglaTipo }})
+          número {{ detalhes.dados.numero }}
+        </p>
+        <p>{{ detalhes.dados.statusProposicao.regime }}</p>
+
+        <p>{{ detalhes.dados.ementa }}</p>
+        <p>
+          Apresentado {{ detalhes.dados.dataApresentacao }} pelo órgão de sigla
+          {{ detalhes.dados.statusProposicao.siglaOrgao }}
+        </p>
+        <p>Atualizado {{ detalhes.dados.statusProposicao.dataHora }}</p>
+        <p>
+          Tramitação: {{ detalhes.dados.statusProposicao.descricaoTramitacao }}
+        </p>
+        <p>Situação: {{ detalhes.dados.statusProposicao.descricaoSituacao }}</p>
+        <p>Despacho: {{ detalhes.dados.statusProposicao.despacho }}</p>
+        <p>Ambito: {{ detalhes.dados.statusProposicao.ambito }}</p>
+        <p>Apreciacao: {{ detalhes.dados.statusProposicao.apreciacao }}</p>
+      </section>
     </main>
 
     <footer>
