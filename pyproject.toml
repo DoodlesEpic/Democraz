@@ -7,9 +7,9 @@ authors = ["DoodlesEpic <eduardomoraes84@yahoo.com.br>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 Django = "^3.2.17"
-requests = "^2.26.0"
 whitenoise = "^6.2.0"
 gunicorn = "^20.1.0"
+aiohttp = "^3.8.3"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
