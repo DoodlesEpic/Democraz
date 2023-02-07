@@ -28,7 +28,7 @@ STATICFILES_DIRS = (
 SECRET_KEY = os.environ.get("DEMOCRAZ_DJANGO_SECRET", "rEWKYEXweRppHmUfGw59dWH36GcP5TbSW5zTq5yKrBdDx9xyvjzZciLkaoB8eC5bv4yhrfYRtTXDByxYXkoJ7SbzyPo3jNKsYXnjvRoRMTPa35UMD3owpv5t2h7XgzcU")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # https://docs.djangoproject.com/en/3.0/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'democraz.onrender.com']
