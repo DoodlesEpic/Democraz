@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get("DEMOCRAZ_DJANGO_SECRET", "rEWKYEXweRppHmUfGw59dWH36
 DEBUG = False
 
 # https://docs.djangoproject.com/en/3.0/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'democraz.onrender.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'democraz.onrender.com', '.vercel.app']
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:    

@@ -1,0 +1,14 @@
+{
+    "builds": [
+        {
+            "src": "democraz_brasil/wsgi.py",
+            "use": "@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "democraz_brasil/wsgi.py"
+        }
+    ]
+}
