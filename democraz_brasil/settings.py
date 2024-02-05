@@ -14,7 +14,7 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
@@ -82,7 +82,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'democraz_brasil.wsgi.application'
+WSGI_APPLICATION = 'democraz_brasil.wsgi.app'
 
 
 # Database
