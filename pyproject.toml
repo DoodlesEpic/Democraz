@@ -5,8 +5,8 @@ description = ""
 authors = ["DoodlesEpic <eduardomoraes84@yahoo.com.br>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
-Django = "^4.2"
+python = "^3.10"
+Django = "^5.0"
 whitenoise = "^6.6"
 gunicorn = "^21.2"
 aiohttp = "^3.9.3"
