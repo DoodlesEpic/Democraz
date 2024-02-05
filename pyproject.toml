@@ -6,14 +6,14 @@ authors = ["DoodlesEpic <eduardomoraes84@yahoo.com.br>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-Django = "^3.2.23"
-whitenoise = "^6.2.0"
-gunicorn = "^20.1.0"
+Django = "^4.2"
+whitenoise = "^6.6"
+gunicorn = "^21.2"
 aiohttp = "^3.9.3"
 
 [tool.poetry.dev-dependencies]
-pytest = "^5.2"
-autopep8 = "^1.5.7"
+pytest = "^8.0"
+autopep8 = "^2.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
