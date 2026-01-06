@@ -4,7 +4,7 @@ Devido a frustação com o website do governo brasileiro para a Câmara dos Depu
 
 ## Demonstração
 
-![Print da tela mostrando a lista de PECs no website](https://user-images.githubusercontent.com/37254797/173978013-09c171c1-5319-4305-b948-6ebbb167c0f4.png)
+![Print da tela mostrando a lista de PECs no website](https://github.com/user-attachments/assets/b7f1306b-3cf0-4b2a-98fa-99e60a4b8da2)
 
 ## Configurando o ambiente
 
