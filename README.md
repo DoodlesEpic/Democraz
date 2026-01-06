@@ -22,6 +22,16 @@ uv run python main.py
 
 Com isso, o servidor de desenvolvimento deve tornar-se acessível.
 
+## Executando em produção
+
+Para executar o servidor em modo de produção, é necessário utilizar o gunicorn:
+
+```sh
+uv run gunicorn -w 4 'main:app'
+```
+
+O parâmetro -w define o número de workers que serão utilizados.
+
 ## Licença
 
 Todo o programa está englobado na licença GNU Affero General Public License v3. Cheque o arquivo LICENSE para detalhes de o que pode ou não fazer com o código.
