@@ -1,2 +1,0 @@
-Git does not allow empty directories, so I have to create this empty file. Python is weird.
-https://devcenter.heroku.com/articles/django-assets
