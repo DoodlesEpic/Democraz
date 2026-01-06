@@ -16,6 +16,9 @@
         --text: #333;
         --white: #ffffff;
         --disabled: #bdc3c7;
+        --border: #e1e8ed;
+        --info-bg: #e1f5fe;
+        --info-text: #0288d1;
       }
 
       body {
@@ -48,10 +51,11 @@
 
       .legislacao-card {
         background: var(--white);
-        border-radius: 8px;
-        padding: 20px;
-        margin-bottom: 20px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        padding: 25px;
+        margin-bottom: 25px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        border: 1px solid var(--border);
         transition: transform 0.2s;
       }
 
@@ -59,34 +63,95 @@
         transform: translateY(-3px);
       }
 
+      .card-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 15px;
+        flex-wrap: wrap;
+      }
+
       .badge {
         display: inline-block;
         background: var(--primary);
         color: white;
-        padding: 4px 12px;
-        border-radius: 20px;
+        padding: 5px 12px;
+        border-radius: 6px;
         font-size: 0.85rem;
         font-weight: bold;
-        margin-bottom: 10px;
+      }
+
+      .status-tag {
+        background: var(--info-bg);
+        color: var(--info-text);
+        padding: 5px 12px;
+        border-radius: 6px;
+        font-size: 0.75rem;
+        font-weight: bold;
+        border: 1px solid #b3e5fc;
       }
 
       .ementa {
         font-size: 1.1rem;
         font-weight: 600;
         color: var(--primary);
-        margin-top: 0;
+        margin: 0 0 12px 0;
       }
 
-      .meta-info {
+      .ementa-detalhada {
+        font-size: 0.95rem;
+        color: #555;
+        background: #f9f9f9;
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 4px solid var(--accent);
+        margin-bottom: 20px;
+      }
+
+      .despacho-box {
+        font-size: 0.85rem;
+        color: #444;
+        background: #fffde7;
+        padding: 12px;
+        border-radius: 6px;
+        border: 1px dashed #fbc02d;
+        margin-bottom: 20px;
+      }
+
+      .meta-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        font-size: 0.85rem;
+        border-top: 1px solid var(--border);
+        padding-top: 15px;
+        margin-bottom: 15px;
+      }
+
+      .keywords {
+        font-size: 0.8rem;
+        color: #888;
+        font-style: italic;
+      }
+
+      .footer-links {
         display: flex;
-        gap: 20px;
-        font-size: 0.9rem;
-        color: #666;
-        border-top: 1px solid #eee;
-        padding-top: 10px;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
       }
 
-      /* Pagination Styles */
+      .btn-doc {
+        color: #2980b9;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 0.9rem;
+      }
+
+      .btn-doc:hover {
+        text-decoration: underline;
+      }
+
       .pagination {
         display: flex;
         justify-content: center;
@@ -129,21 +194,58 @@
     </header>
 
     <main class="container">
-      {% for legislacao in data.dados %}
+      {% for leg in data %}
       <article class="legislacao-card">
-        <span class="badge"
-          >{{ legislacao.siglaTipo }} {{ legislacao.numero }}/{{ legislacao.ano
-          }}</span
-        >
-
-        <h2 class="ementa">{{ legislacao.ementa }}</h2>
-
-        <div class="meta-info">
-          <span><strong>ID:</strong> {{ legislacao.id }}</span>
-          <span
-            ><strong>Apresentação:</strong> {{ legislacao.dataApresentacao[:10]
-            }}</span
+        <div class="card-header">
+          <span class="badge"
+            >{{ leg.siglaTipo }} {{ leg.numero }}/{{ leg.ano }}</span
           >
+          {% if leg.statusProposicao.descricaoSituacao %}
+          <span class="status-tag"
+            >{{ leg.statusProposicao.descricaoSituacao }}</span
+          >
+          {% endif %}
+        </div>
+
+        <h2 class="ementa">{{ leg.ementa }}</h2>
+
+        {% if leg.ementaDetalhada %}
+        <div class="ementa-detalhada">
+          <strong>Detalhes:</strong> {{ leg.ementaDetalhada }}
+        </div>
+        {% endif %} {% if leg.statusProposicao.despacho %}
+        <div class="despacho-box">
+          <strong>Último Passo:</strong> {{ leg.statusProposicao.despacho }}
+        </div>
+        {% endif %}
+
+        <div class="meta-grid">
+          <div>
+            <strong>Apresentação:</strong>
+            {{ leg.dataApresentacao[8:10] }}/{{ leg.dataApresentacao[5:7] }}/{{
+            leg.dataApresentacao[0:4] }}
+          </div>
+          <div><strong>Regime:</strong> {{ leg.statusProposicao.regime }}</div>
+          <div>
+            <strong>Órgão:</strong> {{ leg.statusProposicao.siglaOrgao }}
+          </div>
+          <div>
+            <strong>Apreciação:</strong> {{ leg.statusProposicao.apreciacao }}
+          </div>
+        </div>
+
+        <div class="keywords">
+          <strong>Tags:</strong> {{ leg.keywords or 'Nenhuma palavra-chave
+          disponível.' }}
+        </div>
+
+        <div class="footer-links">
+          {% if leg.urlInteiroTeor %}
+          <a href="{{ leg.urlInteiroTeor }}" target="_blank" class="btn-doc"
+            >Ler versão completa</a
+          >
+          {% endif %}
+          <small style="color: #bbb">ID: {{ leg.id }}</small>
         </div>
       </article>
       {% endfor %}
